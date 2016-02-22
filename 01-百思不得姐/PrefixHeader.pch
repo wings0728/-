@@ -1,0 +1,27 @@
+//
+//  PrefixHeader.pch
+//  01-百思不得姐
+//
+//  Created by Jenny&Jason on 16/2/17.
+//  Copyright © 2016年 Jenny&Jason. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#import "UIBarButtonItem+JC.h"
+#import <MJExtension.h>
+#import <MJRefresh.h>
+#import "UIView+XMGExtension.h"
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+// 颜色
+#define JCColor(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
+// 全局色
+#define JCGlobalColor JCColor(229, 229, 229)
+
+#define JCURL @"http://api.budejie.com/api/api_open.php"
+
+#endif /* PrefixHeader_pch */
