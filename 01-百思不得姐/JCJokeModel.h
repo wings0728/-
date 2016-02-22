@@ -19,6 +19,7 @@
 @property (copy, nonatomic) NSString *favourite;
 @property (copy, nonatomic) NSString *repost;
 
+
 +(instancetype)jokeModelWithDict:(NSDictionary *)dict;
 -(instancetype)initWithDict:(NSDictionary *)dict;
 

@@ -72,7 +72,7 @@
 -(void)setupChlidViewFrame{
     //设置位置
         UITableViewController *vc = self.childViewControllers[0];
-        vc.tableView.contentInset = UIEdgeInsetsMake(94, 0, 49, 0);
+        vc.tableView.contentInset = UIEdgeInsetsMake(100, 0, 49, 0);
         vc.tableView.scrollIndicatorInsets = vc.tableView.contentInset;
         vc.view.x = 0;
         vc.view.y = 0;
@@ -150,6 +150,9 @@
         self.bottomView.centerX = btn.centerX;
         
     }];
+    //刷新对应的tableView
+    UITableViewController *tvc = self.childViewControllers[btn.tag];
+    [tvc.tableView.mj_header beginRefreshing];
 }
 
 
@@ -184,12 +187,11 @@
     }
 
     [self.scrollView layoutIfNeeded];
-//    NSLog(@"afterUpdate:%lu",(unsigned long)self.scrollView.subviews.count);
 }
 //更新scroll子view
 -(void)updateScrollView:(NSInteger)index{
     UITableViewController *vc = self.childViewControllers[index];
-    vc.tableView.contentInset = UIEdgeInsetsMake(94, 0, 49, 0);
+    vc.tableView.contentInset = UIEdgeInsetsMake(104, 0, 49, 0);
     vc.view.x = index * self.view.width;
     vc.view.y = 0;
     vc.view.height = self.view.height;
@@ -219,7 +221,6 @@
     [self titleBtnClick:self.titleView.subviews[index]];
     [self removeTableView];
     [self.scrollView layoutIfNeeded];
-//    NSLog(@"afterRemove:%lu",(unsigned long)self.scrollView.subviews.count);
 }
 
 @end

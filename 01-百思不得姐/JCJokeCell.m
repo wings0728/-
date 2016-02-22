@@ -27,6 +27,7 @@
 
 - (void)awakeFromNib {
     // Initialization code
+    self.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"mainCellBackground"]];
     
 }
 //加载模型
@@ -46,7 +47,15 @@
     NSDictionary *attrs = @{NSFontAttributeName: [UIFont systemFontOfSize:14]};
     self.textLable.frame = [self.textLable.text boundingRectWithSize:CGSizeMake(self.textLable.width, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:attrs context:nil];
 //    CGFloat cellHeight = self.textLable.height + self.icon.height + self.dingBtn.height + 20;
-    NSLog(@"%f",self.height);
+    NSLog(@"%f, %@",self.height,NSStringFromCGRect(self.textLable.frame) );
     return self.height;
+}
+
+-(void)setFrame:(CGRect)frame{
+    frame.origin.x = 10;
+    frame.size.width -= 2 * frame.origin.x;
+    frame.origin.y += 10;
+    frame.size.height -= 10;
+    [super setFrame:frame];
 }
 @end
