@@ -9,18 +9,11 @@
 #import <UIKit/UIKit.h>
 @class JCJokeModel;
 
-//@protocol JCJokeCellDelegate <NSObject>
-//
-//@optional
-//-(CGFloat)jokeCellSetCellHeight;
-//
-//@end
 
 @interface JCJokeCell : UITableViewCell
 
 @property (strong, nonatomic) JCJokeModel *model;
 -(CGFloat)setCellHeight;
-//@property (weak, nonatomic) id<JCJokeCellDelegate> delegate;
 
 
 @end

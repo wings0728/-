@@ -1,8 +1,8 @@
 
 
-#import "UIView+XMGExtension.h"
+#import "UIView+JC.h"
 
-@implementation UIView (XMGExtension)
+@implementation UIView (JC)
 - (void)setWidth:(CGFloat)width
 {
     CGRect frame = self.frame;

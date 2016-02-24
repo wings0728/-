@@ -7,11 +7,7 @@
 //
 
 #import "JCEssenceController.h"
-#import "JCAllTableController.h"
-#import "JCVideoTableController.h"
-#import "JCVoiceTableController.h"
-#import "JCPictureTableController.h"
-#import "JCJokeTableController.h"
+#import "JCBaseTableController.h"
 
 @interface JCEssenceController()<UIScrollViewDelegate>
 
@@ -30,15 +26,17 @@
     [super viewDidLoad];
     [self setupNav];
     
+    [self setupChlidTableView];
     //设置顶部view
     [self setupTitleView];
     //初始化scrollView
-    
-    [self setupChlidTableView];
     [self setupScrollView];
     //初始化第一个子控件位置
     [self setupChlidViewFrame];
 }
+/**
+ *  初始化scrollView
+ */
 -(void)setupScrollView{
     UIScrollView *scrollView = [[UIScrollView alloc] init];
     self.automaticallyAdjustsScrollViewInsets = NO;
@@ -56,19 +54,30 @@
  *  初始化子tableView
  */
 -(void)setupChlidTableView{
-    JCAllTableController *all = [[JCAllTableController alloc] init];
+    JCBaseTableController *all = [[JCBaseTableController alloc] init];
+    all.type = JCTableViewTypeAll;
     [self addChildViewController:all];
-    JCVideoTableController *video = [[JCVideoTableController alloc] init];
+    
+    JCBaseTableController *video = [[JCBaseTableController alloc] init];
+    video.type = JCTableViewTypeVideo;
     [self addChildViewController:video];
-    JCVoiceTableController *voice = [[JCVoiceTableController alloc] init];
+    
+    JCBaseTableController *voice = [[JCBaseTableController alloc] init];
+    voice.type = JCTableViewTypeVoice;
     [self addChildViewController:voice];
-    JCPictureTableController *picture = [[JCPictureTableController alloc] init];
+    
+    JCBaseTableController *picture = [[JCBaseTableController alloc] init];
+    picture.type = JCTableViewTypePicture;
     [self addChildViewController:picture];
-    JCJokeTableController *joke = [[JCJokeTableController alloc] init];
-    [self addChildViewController:joke];
+    
+    JCBaseTableController *word = [[JCBaseTableController alloc] init];
+    word.type = JCTableViewTypeWord;
+    [self addChildViewController:word];
     
 }
-
+/**
+ *  初始子控制器View的位置
+ */
 -(void)setupChlidViewFrame{
     //设置位置
         UITableViewController *vc = self.childViewControllers[0];
@@ -125,6 +134,8 @@
             self.selectedBtn = btn;
             self.bottomView.width = btn.titleLabel.width;
             self.bottomView.centerX = btn.centerX;
+            UITableViewController *tvc = self.childViewControllers[index];
+            [tvc.tableView.mj_header beginRefreshing];
         }
     }
     
@@ -155,7 +166,9 @@
     [tvc.tableView.mj_header beginRefreshing];
 }
 
-
+/**
+ *  初始化导航栏
+ */
 -(void)setupNav{
     //设置导航栏titleView
     UIImageView *titleImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"MainTitle"]];
@@ -165,7 +178,9 @@
     self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithImage:@"MainTagSubIcon" selectedImage:@"MainTagSubIconClick" target:self action:@selector(leftClick)];
 }
 
-
+/**
+ *  监听左上按钮点击
+ */
 -(void)leftClick{
     UIViewController *vc = [[UIViewController alloc] init];
     vc.view.backgroundColor = [UIColor redColor];
@@ -197,7 +212,6 @@
     vc.view.height = self.view.height;
     vc.view.width = self.view.width;
     [self.scrollView addSubview:vc.view];
-//    NSLog(@"add:%@",NSStringFromClass([self.childViewControllers[index] class]));
 }
 
 /**
@@ -207,14 +221,12 @@
     for (UITableView *tv in self.scrollView.subviews) {
         if (tv.frame.origin.x != self.scrollView.contentOffset.x) {
             [tv removeFromSuperview];
-        }else{
-            //刷新cell
-//            NSLog(@"remove");
-            
         }
     }
 }
-
+/**
+ *  scrollView滑动放开时
+ */
 -(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
     
     NSInteger index = self.scrollView.contentOffset.x / self.view.width;

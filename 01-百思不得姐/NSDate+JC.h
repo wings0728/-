@@ -14,4 +14,8 @@
 -(BOOL)isThisYear;
 -(BOOL)isYesterday;
 
+-(NSInteger)deltaHours:(NSDate *)date;
+-(NSInteger)deltaMinutes:(NSDate *)date;
+-(NSInteger)deltaSeconds:(NSDate *)date;
+
 @end

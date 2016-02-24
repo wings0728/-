@@ -43,7 +43,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kRF-sl-MSl">
-                        <rect key="frame" x="10" y="50" width="300" height="43.5"/>
+                        <rect key="frame" x="10" y="50" width="300" height="17"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
@@ -69,7 +69,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xe7-9j-Gpx">
                                 <rect key="frame" x="80" y="0.0" width="80" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <state key="normal" image="mainCellCai"/>
+                                <state key="normal" image="mainCellCai">
+                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <state key="highlighted" image="mainCellCaiClick">
                                     <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -85,7 +87,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sFh-hW-DI7">
                                 <rect key="frame" x="240" y="0.0" width="80" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <state key="normal" image="mainCellComment"/>
+                                <state key="normal" image="mainCellComment">
+                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <state key="highlighted" image="mainCellCommentClick">
                                     <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -156,7 +160,6 @@
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="fbW-1E-cMt" secondAttribute="bottom" id="1OU-HJ-hIu"/>
                     <constraint firstAttribute="trailing" secondItem="3Fr-6b-gk6" secondAttribute="trailing" id="3Uv-6Q-dqH"/>
-                    <constraint firstItem="3Fr-6b-gk6" firstAttribute="top" secondItem="kRF-sl-MSl" secondAttribute="bottom" constant="10" id="4Nb-Zn-ZAp"/>
                     <constraint firstItem="Kfc-Cy-6v9" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="7t6-de-xtK"/>
                     <constraint firstAttribute="trailing" secondItem="kRF-sl-MSl" secondAttribute="trailing" constant="10" id="83d-B8-SME"/>
                     <constraint firstItem="fbW-1E-cMt" firstAttribute="top" secondItem="3Fr-6b-gk6" secondAttribute="bottom" id="8V5-4S-B0z"/>

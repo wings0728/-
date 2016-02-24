@@ -11,6 +11,7 @@
 		364238871C75D2BC00262509 /* JCFriendLeftCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 364238851C75D2BC00262509 /* JCFriendLeftCell.m */; };
 		364238881C75D2BC00262509 /* JCFriendLeftCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 364238861C75D2BC00262509 /* JCFriendLeftCell.xib */; };
 		3642388B1C75EEA700262509 /* JCFiendLeftModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3642388A1C75EEA700262509 /* JCFiendLeftModel.m */; };
+		364A18F41C7DEC170062D8A2 /* JCConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 364A18F31C7DEC170062D8A2 /* JCConst.m */; };
 		364DC0921C74AD550092E728 /* JCNewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 364DC0911C74AD550092E728 /* JCNewController.m */; };
 		364DC09A1C74AE720092E728 /* JCfriendTrendsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 364DC0981C74AE720092E728 /* JCfriendTrendsController.m */; };
 		364DC09B1C74AE720092E728 /* JCfriendTrendsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 364DC0991C74AE720092E728 /* JCfriendTrendsController.xib */; };
@@ -27,12 +28,7 @@
 		36BCB3711C744D9800E6CD1C /* _1______UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 36BCB3701C744D9800E6CD1C /* _1______UITests.m */; };
 		36BCB3801C744E9200E6CD1C /* JCMainTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 36BCB37F1C744E9200E6CD1C /* JCMainTabBar.m */; };
 		36BCB38A1C74625900E6CD1C /* JCTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 36BCB3891C74625900E6CD1C /* JCTabBar.m */; };
-		36BCB38D1C746D2000E6CD1C /* UIView+XMGExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 36BCB38C1C746D2000E6CD1C /* UIView+XMGExtension.m */; };
-		36BDEFF41C7841C10036F94E /* JCAllTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36BDEFF31C7841C10036F94E /* JCAllTableController.m */; };
-		36BDEFF71C7841D60036F94E /* JCVideoTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36BDEFF61C7841D60036F94E /* JCVideoTableController.m */; };
-		36BDEFFA1C7841F90036F94E /* JCVoiceTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36BDEFF91C7841F90036F94E /* JCVoiceTableController.m */; };
-		36BDEFFD1C78420C0036F94E /* JCPictureTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36BDEFFC1C78420C0036F94E /* JCPictureTableController.m */; };
-		36BDF0001C7842230036F94E /* JCJokeTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36BDEFFF1C7842230036F94E /* JCJokeTableController.m */; };
+		36BCB38D1C746D2000E6CD1C /* UIView+JC.m in Sources */ = {isa = PBXBuildFile; fileRef = 36BCB38C1C746D2000E6CD1C /* UIView+JC.m */; };
 		36BDF0031C785EE40036F94E /* JCBaseTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36BDF0021C785EE40036F94E /* JCBaseTableController.m */; };
 		36BDF0061C7895790036F94E /* JCJokeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 36BDF0051C7895790036F94E /* JCJokeModel.m */; };
 		36BDF00A1C789E120036F94E /* JCJokeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 36BDF0081C789E120036F94E /* JCJokeCell.m */; };
@@ -69,6 +65,8 @@
 		364238861C75D2BC00262509 /* JCFriendLeftCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JCFriendLeftCell.xib; sourceTree = "<group>"; };
 		364238891C75EEA700262509 /* JCFiendLeftModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JCFiendLeftModel.h; sourceTree = "<group>"; };
 		3642388A1C75EEA700262509 /* JCFiendLeftModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JCFiendLeftModel.m; sourceTree = "<group>"; };
+		364A18F21C7DEC170062D8A2 /* JCConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JCConst.h; sourceTree = "<group>"; };
+		364A18F31C7DEC170062D8A2 /* JCConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JCConst.m; sourceTree = "<group>"; };
 		364DC08B1C74A7500092E728 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		364DC0901C74AD550092E728 /* JCNewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JCNewController.h; sourceTree = "<group>"; };
 		364DC0911C74AD550092E728 /* JCNewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JCNewController.m; sourceTree = "<group>"; };
@@ -101,18 +99,8 @@
 		36BCB37F1C744E9200E6CD1C /* JCMainTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JCMainTabBar.m; sourceTree = "<group>"; };
 		36BCB3881C74625900E6CD1C /* JCTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JCTabBar.h; sourceTree = "<group>"; };
 		36BCB3891C74625900E6CD1C /* JCTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JCTabBar.m; sourceTree = "<group>"; };
-		36BCB38B1C746D2000E6CD1C /* UIView+XMGExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+XMGExtension.h"; sourceTree = "<group>"; };
-		36BCB38C1C746D2000E6CD1C /* UIView+XMGExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+XMGExtension.m"; sourceTree = "<group>"; };
-		36BDEFF21C7841C10036F94E /* JCAllTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JCAllTableController.h; sourceTree = "<group>"; };
-		36BDEFF31C7841C10036F94E /* JCAllTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JCAllTableController.m; sourceTree = "<group>"; };
-		36BDEFF51C7841D60036F94E /* JCVideoTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JCVideoTableController.h; sourceTree = "<group>"; };
-		36BDEFF61C7841D60036F94E /* JCVideoTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JCVideoTableController.m; sourceTree = "<group>"; };
-		36BDEFF81C7841F90036F94E /* JCVoiceTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JCVoiceTableController.h; sourceTree = "<group>"; };
-		36BDEFF91C7841F90036F94E /* JCVoiceTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JCVoiceTableController.m; sourceTree = "<group>"; };
-		36BDEFFB1C78420C0036F94E /* JCPictureTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JCPictureTableController.h; sourceTree = "<group>"; };
-		36BDEFFC1C78420C0036F94E /* JCPictureTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JCPictureTableController.m; sourceTree = "<group>"; };
-		36BDEFFE1C7842230036F94E /* JCJokeTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JCJokeTableController.h; sourceTree = "<group>"; };
-		36BDEFFF1C7842230036F94E /* JCJokeTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JCJokeTableController.m; sourceTree = "<group>"; };
+		36BCB38B1C746D2000E6CD1C /* UIView+JC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+JC.h"; sourceTree = "<group>"; };
+		36BCB38C1C746D2000E6CD1C /* UIView+JC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+JC.m"; sourceTree = "<group>"; };
 		36BDF0011C785EE40036F94E /* JCBaseTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JCBaseTableController.h; sourceTree = "<group>"; };
 		36BDF0021C785EE40036F94E /* JCBaseTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JCBaseTableController.m; sourceTree = "<group>"; };
 		36BDF0041C7895790036F94E /* JCJokeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JCJokeModel.h; sourceTree = "<group>"; };
@@ -195,6 +183,20 @@
 				3674B21A1C76042900075450 /* JCFriendRightModel.m */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		364A18F51C7E04B50062D8A2 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				3696C01B1C7C231500A7FDEB /* NSDate+JC.h */,
+				3696C01C1C7C231500A7FDEB /* NSDate+JC.m */,
+				36EB8D041C74A372008E3289 /* UIBarButtonItem+JC.h */,
+				36EB8D051C74A372008E3289 /* UIBarButtonItem+JC.m */,
+				364DC0A01C74B8210092E728 /* Foundation+Log.m */,
+				36BCB38B1C746D2000E6CD1C /* UIView+JC.h */,
+				36BCB38C1C746D2000E6CD1C /* UIView+JC.m */,
+			);
+			name = Category;
 			sourceTree = "<group>";
 		};
 		364DC08C1C74AD2B0092E728 /* New */ = {
@@ -386,16 +388,12 @@
 		36BCB3871C7457DB00E6CD1C /* Other */ = {
 			isa = PBXGroup;
 			children = (
-				364DC0A01C74B8210092E728 /* Foundation+Log.m */,
-				36BCB38B1C746D2000E6CD1C /* UIView+XMGExtension.h */,
-				36BCB38C1C746D2000E6CD1C /* UIView+XMGExtension.m */,
+				364A18F51C7E04B50062D8A2 /* Category */,
 				36BCB34E1C744D9700E6CD1C /* AppDelegate.h */,
 				36BCB34F1C744D9700E6CD1C /* AppDelegate.m */,
-				36EB8D041C74A372008E3289 /* UIBarButtonItem+JC.h */,
-				36EB8D051C74A372008E3289 /* UIBarButtonItem+JC.m */,
+				364A18F21C7DEC170062D8A2 /* JCConst.h */,
+				364A18F31C7DEC170062D8A2 /* JCConst.m */,
 				364DC08B1C74A7500092E728 /* PrefixHeader.pch */,
-				3696C01B1C7C231500A7FDEB /* NSDate+JC.h */,
-				3696C01C1C7C231500A7FDEB /* NSDate+JC.m */,
 			);
 			name = Other;
 			sourceTree = "<group>";
@@ -415,16 +413,6 @@
 			children = (
 				36EB8D011C74A00B008E3289 /* JCEssenceController.h */,
 				36EB8D021C74A00B008E3289 /* JCEssenceController.m */,
-				36BDEFF21C7841C10036F94E /* JCAllTableController.h */,
-				36BDEFF31C7841C10036F94E /* JCAllTableController.m */,
-				36BDEFF51C7841D60036F94E /* JCVideoTableController.h */,
-				36BDEFF61C7841D60036F94E /* JCVideoTableController.m */,
-				36BDEFF81C7841F90036F94E /* JCVoiceTableController.h */,
-				36BDEFF91C7841F90036F94E /* JCVoiceTableController.m */,
-				36BDEFFB1C78420C0036F94E /* JCPictureTableController.h */,
-				36BDEFFC1C78420C0036F94E /* JCPictureTableController.m */,
-				36BDEFFE1C7842230036F94E /* JCJokeTableController.h */,
-				36BDEFFF1C7842230036F94E /* JCJokeTableController.m */,
 				36BDF0011C785EE40036F94E /* JCBaseTableController.h */,
 				36BDF0021C785EE40036F94E /* JCBaseTableController.m */,
 			);
@@ -644,7 +632,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				36BDEFFA1C7841F90036F94E /* JCVoiceTableController.m in Sources */,
 				3674B2171C75FCF500075450 /* JCFriendRightCell.m in Sources */,
 				364DC09A1C74AE720092E728 /* JCfriendTrendsController.m in Sources */,
 				36BCB3501C744D9700E6CD1C /* AppDelegate.m in Sources */,
@@ -652,23 +639,20 @@
 				36EB8CFC1C749E9E008E3289 /* JCMainNavigationController.m in Sources */,
 				3696C01D1C7C231500A7FDEB /* NSDate+JC.m in Sources */,
 				364DC09E1C74B28B0092E728 /* JCfriendsRecommentController.m in Sources */,
-				36BCB38D1C746D2000E6CD1C /* UIView+XMGExtension.m in Sources */,
+				36BCB38D1C746D2000E6CD1C /* UIView+JC.m in Sources */,
 				36BCB34D1C744D9700E6CD1C /* main.m in Sources */,
-				36BDF0001C7842230036F94E /* JCJokeTableController.m in Sources */,
 				36BDF0061C7895790036F94E /* JCJokeModel.m in Sources */,
 				36BDF0031C785EE40036F94E /* JCBaseTableController.m in Sources */,
 				36BCB38A1C74625900E6CD1C /* JCTabBar.m in Sources */,
 				36BDF00A1C789E120036F94E /* JCJokeCell.m in Sources */,
 				364238871C75D2BC00262509 /* JCFriendLeftCell.m in Sources */,
+				364A18F41C7DEC170062D8A2 /* JCConst.m in Sources */,
 				36EB8D061C74A372008E3289 /* UIBarButtonItem+JC.m in Sources */,
 				36BCB3801C744E9200E6CD1C /* JCMainTabBar.m in Sources */,
 				364DC0921C74AD550092E728 /* JCNewController.m in Sources */,
 				36EB8D031C74A00B008E3289 /* JCEssenceController.m in Sources */,
-				36BDEFF41C7841C10036F94E /* JCAllTableController.m in Sources */,
 				3642388B1C75EEA700262509 /* JCFiendLeftModel.m in Sources */,
 				364DC0A11C74B8210092E728 /* Foundation+Log.m in Sources */,
-				36BDEFFD1C78420C0036F94E /* JCPictureTableController.m in Sources */,
-				36BDEFF71C7841D60036F94E /* JCVideoTableController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

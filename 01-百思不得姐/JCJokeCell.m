@@ -28,6 +28,7 @@
 - (void)awakeFromNib {
     // Initialization code
     self.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"mainCellBackground"]];
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
     
 }
 //加载模型
@@ -35,15 +36,27 @@
     _model = model;
     [self.icon sd_setImageWithURL:[NSURL URLWithString:model.profile_image] placeholderImage:[UIImage imageNamed:@"defaultUserIcon"]];
     self.nameLable.text = model.screen_name;
+    [self setupTimeLable:model];
+//    NSLog(@"是否今年：%d,是否今天：%d,是否昨天：%d",createDate.isThisYear,createDate.isToday,createDate.isYesterday);
+    
+    
+    self.textLable.text = model.text;
+    [self.dingBtn setTitle:model.ding forState:UIControlStateNormal];
+    [self.caiBtn setTitle:model.cai forState:UIControlStateNormal];
+    [self.shareBtn setTitle:model.favourite forState:UIControlStateNormal];
+    [self.messageBtn setTitle:model.repost forState:UIControlStateNormal];
+}
+
+-(void)setupTimeLable:(JCJokeModel *)model{
     /**
      *  今年：
-            今天：
-                1分钟内：刚刚
-                1小时内：xx分钟前
-                其他：xx小时前
-            昨天：昨天 HH:mm:ss
-            其他：MM-dd HH:mm:ss
-        非今年：yyyy-MM-dd HH:mm:ss
+     今天：
+     1分钟内：刚刚
+     1小时内：xx分钟前
+     其他：xx小时前
+     昨天：昨天 HH:mm:ss
+     其他：MM-dd HH:mm:ss
+     非今年：yyyy-MM-dd HH:mm:ss
      */
     //拿到现在的时间
     NSDate *nowDate = [NSDate date];
@@ -57,9 +70,10 @@
     if (createDate.isThisYear) {//今年
         if (createDate.isToday) {//今天
             if (cmps.minute > 60) {//其他
-                self.createdDate.text = [NSString stringWithFormat:@"%ld小时前",(long)cmps.hour];
+                
+                self.createdDate.text = [NSString stringWithFormat:@"%ld小时前",[nowDate deltaHours:createDate]];
             }else if(cmps.second >= 60){//1小时内
-                self.createdDate.text = [NSString stringWithFormat:@"%ld分钟前",(long)cmps.minute];
+                self.createdDate.text = [NSString stringWithFormat:@"%ld分钟前",[nowDate deltaMinutes:createDate]];
             }else{//1分钟内
                 self.createdDate.text = @"刚刚";
             }
@@ -73,29 +87,24 @@
     }else{//非今年
         self.createdDate.text = model.create_time;
     }
-//    NSLog(@"是否今年：%d,是否今天：%d,是否昨天：%d",createDate.isThisYear,createDate.isToday,createDate.isYesterday);
-    
-    
-    self.textLable.text = model.text;
-    [self.dingBtn setTitle:model.ding forState:UIControlStateNormal];
-    [self.caiBtn setTitle:model.cai forState:UIControlStateNormal];
-    [self.shareBtn setTitle:model.favourite forState:UIControlStateNormal];
-    [self.messageBtn setTitle:model.repost forState:UIControlStateNormal];
 }
-//设置高度
+
+/**
+ *  设置高度
+ */
 -(CGFloat)setCellHeight{
     NSDictionary *attrs = @{NSFontAttributeName: [UIFont systemFontOfSize:14]};
-    self.textLable.frame = [self.textLable.text boundingRectWithSize:CGSizeMake(self.textLable.width, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:attrs context:nil];
-//    CGFloat cellHeight = self.textLable.height + self.icon.height + self.dingBtn.height + 20;
-//    NSLog(@"%f, %@",self.height,NSStringFromCGRect(self.textLable.frame) );
-    return self.height;
+    CGSize textSize = CGSizeMake([UIScreen mainScreen].bounds.size.width - 4 * JCCellMarginX - 2 * JCCellTextMarginW, MAXFLOAT);
+    self.textLable.frame = [self.textLable.text boundingRectWithSize:textSize options:NSStringDrawingUsesLineFragmentOrigin attributes:attrs context:nil];
+    CGFloat cellHeight = self.textLable.frame.size.height + JCCellIconH + JCCellButtonViewH + JCCellMarginH + JCCellMarginY;
+    return cellHeight;
 }
 
 -(void)setFrame:(CGRect)frame{
-    frame.origin.x = 10;
-    frame.size.width -= 2 * frame.origin.x;
-    frame.origin.y += 10;
-    frame.size.height -= 10;
+    frame.origin.x = JCCellMarginX;
+    frame.size.width -= 2 * JCCellMarginX;
+    frame.origin.y += JCCellMarginY;
+    frame.size.height -= JCCellMarginH;
     [super setFrame:frame];
 }
 @end
