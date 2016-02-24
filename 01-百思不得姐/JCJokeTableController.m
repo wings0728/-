@@ -52,9 +52,10 @@ static NSString *const ID = @"CellJoke";
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([JCJokeCell class]) bundle:nil] forCellReuseIdentifier:ID];
     //发送请求，加载数据
     [self setupRefresh];
+    //设置tableView属性
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.backgroundColor = [UIColor clearColor];
-    
+    self.tableView.scrollIndicatorInsets = UIEdgeInsetsMake(104, 0, 44, 0);
 }
 
 -(void)setupRefresh{
@@ -84,6 +85,7 @@ static NSString *const ID = @"CellJoke";
         self.page = 0;
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         [self.tableView.mj_header endRefreshing];
+        [SVProgressHUD showErrorWithStatus:@"连接错误"];
     }];
 }
 /**
@@ -109,6 +111,7 @@ static NSString *const ID = @"CellJoke";
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         self.page--;
         [self.tableView.mj_footer endRefreshing];
+        [SVProgressHUD showErrorWithStatus:@"连接错误"];
     }];
 }
 

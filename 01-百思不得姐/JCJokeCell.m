@@ -35,7 +35,47 @@
     _model = model;
     [self.icon sd_setImageWithURL:[NSURL URLWithString:model.profile_image] placeholderImage:[UIImage imageNamed:@"defaultUserIcon"]];
     self.nameLable.text = model.screen_name;
-    self.createdDate.text = model.create_time;
+    /**
+     *  今年：
+            今天：
+                1分钟内：刚刚
+                1小时内：xx分钟前
+                其他：xx小时前
+            昨天：昨天 HH:mm:ss
+            其他：MM-dd HH:mm:ss
+        非今年：yyyy-MM-dd HH:mm:ss
+     */
+    //拿到现在的时间
+    NSDate *nowDate = [NSDate date];
+    //拿到帖子时间
+    NSDateFormatter *fmt = [[NSDateFormatter alloc] init];
+    fmt.dateFormat = @"yyyy-MM-dd HH:mm:ss";
+    NSDate *createDate = [fmt dateFromString:model.create_time];
+    //比较日期
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    NSDateComponents *cmps = [calendar components:NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitDay|NSCalendarUnitMinute|NSCalendarUnitSecond fromDate:createDate toDate:nowDate options:NSCalendarWrapComponents];
+    if (createDate.isThisYear) {//今年
+        if (createDate.isToday) {//今天
+            if (cmps.minute > 60) {//其他
+                self.createdDate.text = [NSString stringWithFormat:@"%ld小时前",(long)cmps.hour];
+            }else if(cmps.second >= 60){//1小时内
+                self.createdDate.text = [NSString stringWithFormat:@"%ld分钟前",(long)cmps.minute];
+            }else{//1分钟内
+                self.createdDate.text = @"刚刚";
+            }
+        }else if (createDate.isYesterday){//昨天
+            fmt.dateFormat = @"HH:mm:ss";
+            self.createdDate.text = [NSString stringWithFormat:@"昨天 %@",[fmt stringFromDate:createDate]];
+        }else{//其他
+            fmt.dateFormat = @"MM-dd HH:mm:ss";
+            self.createdDate.text = [fmt stringFromDate:createDate];
+        }
+    }else{//非今年
+        self.createdDate.text = model.create_time;
+    }
+//    NSLog(@"是否今年：%d,是否今天：%d,是否昨天：%d",createDate.isThisYear,createDate.isToday,createDate.isYesterday);
+    
+    
     self.textLable.text = model.text;
     [self.dingBtn setTitle:model.ding forState:UIControlStateNormal];
     [self.caiBtn setTitle:model.cai forState:UIControlStateNormal];
@@ -47,7 +87,7 @@
     NSDictionary *attrs = @{NSFontAttributeName: [UIFont systemFontOfSize:14]};
     self.textLable.frame = [self.textLable.text boundingRectWithSize:CGSizeMake(self.textLable.width, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:attrs context:nil];
 //    CGFloat cellHeight = self.textLable.height + self.icon.height + self.dingBtn.height + 20;
-    NSLog(@"%f, %@",self.height,NSStringFromCGRect(self.textLable.frame) );
+//    NSLog(@"%f, %@",self.height,NSStringFromCGRect(self.textLable.frame) );
     return self.height;
 }
 
