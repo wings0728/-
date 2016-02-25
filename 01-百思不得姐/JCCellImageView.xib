@@ -44,6 +44,7 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="gifImage" destination="p9e-tr-UXX" id="mex-Mt-ndZ"/>
                 <outlet property="pictureView" destination="n1v-s6-w1J" id="LFd-Ha-2m9"/>
             </connections>
             <point key="canvasLocation" x="295.5" y="296.5"/>

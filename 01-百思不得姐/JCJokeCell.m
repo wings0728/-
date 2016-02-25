@@ -52,7 +52,6 @@
     bgView.image = [UIImage imageNamed:@"mainCellBackground"];
     self.backgroundView = bgView;
     self.selectionStyle = UITableViewCellSelectionStyleNone;
-//    self.textLabel.textColor = [UIColor blackColor];
 }
 //加载模型,给各控件赋值
 -(void)setModel:(JCJokeModel *)model{

@@ -10,6 +10,12 @@
 #import "JCJokeModel.h"
 #import <UIImageView+WebCache.h>
 
+@interface JCCellImageView()
+
+@property (weak, nonatomic) IBOutlet UIImageView *gifImage;
+@property (weak, nonatomic) IBOutlet UIImageView *pictureView;
+
+@end
 
 @implementation JCCellImageView
 
@@ -21,8 +27,9 @@
     _model = model;
     //设置图片
     [self.pictureView sd_setImageWithURL:[NSURL URLWithString:model.image1]];
-//    NSLog(@"%@",model.image1);
-//    NSLog(@"%@",NSStringFromCGRect(self.pictureView.frame));
+    if (!model.is_gif) {
+        self.gifImage.hidden = YES;
+    }
 }
 
 -(void)awakeFromNib{

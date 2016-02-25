@@ -30,7 +30,6 @@
             CGFloat imageW = textSize.width;
             CGFloat imageH = self.height * ( imageW / self.width);
             self.imageF = CGRectMake(imageX, imageY, imageW, imageH);
-            //        NSLog(@"%@",NSStringFromCGRect(self.cellImageView.frame));
             //cell高度
             cellHeight = imageH + imageY + JCCellMarginY + JCCellButtonViewH + JCCellMarginH;
         }

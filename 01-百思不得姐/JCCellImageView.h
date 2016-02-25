@@ -15,6 +15,6 @@
 /** cell中的模型 **/
 @property (strong, nonatomic) JCJokeModel *model;
 
-@property (weak, nonatomic) IBOutlet UIImageView *pictureView;
+
 
 @end

@@ -144,13 +144,11 @@ static NSString *const ID = @"CellJoke";
     
     cell.model = self.data[indexPath.row];
 
-//    self.cellHeight = [cell setCellHeight];
     NSLog(@"%@",self.title);
     return cell;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-//    return self.cellHeight;
     JCJokeModel *model = self.data[indexPath.row];
     return model.cellHeight;
 }

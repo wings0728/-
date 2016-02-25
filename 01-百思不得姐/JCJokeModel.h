@@ -35,6 +35,9 @@
 @property (assign, nonatomic) CGFloat width;
 /** 图片宽度 **/
 @property (assign, nonatomic) CGRect imageF;
+/** 图片gif判断 **/
+@property (assign, nonatomic) BOOL is_gif;
+
 
 /** 帖子类型 **/
 @property (assign, nonatomic) JCTableViewType type;

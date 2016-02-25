@@ -103,7 +103,7 @@
 -(void)setupTitleView{
     UIView *titleView = [[UIView alloc] init];
     titleView.frame = CGRectMake(0, 60, self.view.frame.size.width, 44);
-    titleView.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:1];
+    titleView.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.7];
     [self.view addSubview:titleView];
     self.titleView = titleView;
     //初始化5个按钮
@@ -157,10 +157,7 @@
     self.selectedBtn = btn;
     //把scrollView移到对应位置
     self.scrollView.contentOffset = CGPointMake(btn.tag * self.view.width, 0);
-    //显示对应位置的tableView
-//    [self updateScrollView:btn.tag];
-    //删除多余view
-//    [self removeTableView];
+
     //底部View的动画
     [UIView animateWithDuration:0.25 animations:^{
         
@@ -168,11 +165,7 @@
         self.bottomView.centerX = btn.centerX;
         
     }];
-    // 滚动
-//    CGPoint offset = self.scrollView.contentOffset;
-//    offset.x = btn.tag * self.scrollView.width;
-//    [self.scrollView setContentOffset:offset animated:YES];
-//    NSLog(@"%f",offset.x);
+
     [self scrollViewDidEndScrollingAnimation:self.scrollView];
 }
 
@@ -198,31 +191,6 @@
 }
 
 #pragma mark - scrollView代理
-//开始拖拽scrollView时
-//-(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
-//    //把此刻tableView左右两边的tableView加入scrollView
-//    NSInteger index = scrollView.contentOffset.x / self.view.width;//为此时显示的table
-//    //首先要判断此时的index是否大于0
-//    if (index > 0) {
-//        [self updateScrollView:(index - 1)];
-//    }
-//    //再判断index是否小于子控制器数量
-//    if (index < self.childViewControllers.count - 1) {
-//        [self updateScrollView:(index + 1)];
-//    }
-//
-//    [self.scrollView layoutIfNeeded];
-//}
-//更新scroll子view
-//-(void)updateScrollView:(NSInteger)index{
-//    UITableViewController *vc = self.childViewControllers[index];
-//    vc.tableView.contentInset = UIEdgeInsetsMake(104, 0, 49, 0);
-//    vc.view.x = index * self.view.width;
-//    vc.view.y = 0;
-//    vc.view.height = self.view.height;
-//    vc.view.width = self.view.width;
-//    [self.scrollView addSubview:vc.view];
-//}
 
 -(void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView{
     //拿出索引
@@ -238,16 +206,7 @@
     [scrollView addSubview:vc.view];
 }
 
-/**
- *  删除其余tableview
- */
-//-(void)removeTableView{
-//    for (UITableView *tv in self.scrollView.subviews) {
-//        if (tv.frame.origin.x != self.scrollView.contentOffset.x) {
-//            [tv removeFromSuperview];
-//        }
-//    }
-//}
+
 /**
  *  scrollView滑动放开时
  */
@@ -255,8 +214,7 @@
     [self scrollViewDidEndScrollingAnimation:scrollView];
     NSInteger index = self.scrollView.contentOffset.x / self.view.width;
     [self titleBtnClick:self.titleView.subviews[index]];
-//    [self removeTableView];
-//    [self.scrollView layoutIfNeeded];
+
 }
 
 @end
