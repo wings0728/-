@@ -11,3 +11,7 @@ CGFloat const JCCellIconH = 40;
 CGFloat const JCCellButtonViewH = 40;
 /** 精华－Cell－textLable的横向间距 */
 CGFloat const JCCellTextMarginW = 10;
+/** 精华－Cell－超大图片尺寸判断依据 */
+CGFloat const JCCellImageTooBigH = 600;
+/** 精华－Cell－超大图片默认显示高度 */
+CGFloat const JCCellMaxImageH = 250;

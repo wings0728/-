@@ -29,9 +29,14 @@
             CGFloat imageY = textF.size.height + textY + JCCellMarginY;
             CGFloat imageW = textSize.width;
             CGFloat imageH = self.height * ( imageW / self.width);
+            if (imageH > JCCellImageTooBigH) {
+                imageH = JCCellMaxImageH;
+                self.tooBigImage = YES;
+            }
             self.imageF = CGRectMake(imageX, imageY, imageW, imageH);
             //cell高度
             cellHeight = imageH + imageY + JCCellMarginY + JCCellButtonViewH + JCCellMarginH;
+            
         }
         _cellHeight = cellHeight;
     }

@@ -14,6 +14,7 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *gifImage;
 @property (weak, nonatomic) IBOutlet UIImageView *pictureView;
+@property (weak, nonatomic) IBOutlet UIButton *bigImageBtn;
 
 @end
 
@@ -27,8 +28,15 @@
     _model = model;
     //设置图片
     [self.pictureView sd_setImageWithURL:[NSURL URLWithString:model.image1]];
-    if (!model.is_gif) {
-        self.gifImage.hidden = YES;
+    //设置gif图标的隐藏
+    self.gifImage.hidden = !model.is_gif;
+    //判断是否超大图片
+    if (!model.isTooBigImage) {
+        self.pictureView.contentMode = UIViewContentModeScaleToFill;
+        self.bigImageBtn.hidden = YES;
+    }else{
+        self.pictureView.contentMode = UIViewContentModeScaleAspectFill;
+        self.bigImageBtn.hidden = NO;
     }
 }
 

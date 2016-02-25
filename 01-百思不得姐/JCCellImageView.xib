@@ -11,7 +11,7 @@
             <rect key="frame" x="0.0" y="0.0" width="319" height="271"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="n1v-s6-w1J">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="n1v-s6-w1J">
                     <rect key="frame" x="0.0" y="0.0" width="319" height="271"/>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="common-gif" translatesAutoresizingMaskIntoConstraints="NO" id="p9e-tr-UXX">
@@ -44,6 +44,7 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="bigImageBtn" destination="Zwh-Qp-WoH" id="vHf-YF-uSz"/>
                 <outlet property="gifImage" destination="p9e-tr-UXX" id="mex-Mt-ndZ"/>
                 <outlet property="pictureView" destination="n1v-s6-w1J" id="LFd-Ha-2m9"/>
             </connections>

@@ -37,6 +37,8 @@
 @property (assign, nonatomic) CGRect imageF;
 /** 图片gif判断 **/
 @property (assign, nonatomic) BOOL is_gif;
+/** 图片超大判断判断 **/
+@property (assign, nonatomic,getter=isTooBigImage) BOOL tooBigImage;
 
 
 /** 帖子类型 **/
