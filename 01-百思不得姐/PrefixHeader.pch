@@ -23,7 +23,16 @@
 #define JCColor(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
 // 全局色
 #define JCGlobalColor JCColor(229, 229, 229)
-
+// URL
 #define JCURL @"http://api.budejie.com/api/api_open.php"
+//主页帖子类型
+typedef enum{
+    JCTableViewTypeAll = 1,
+    JCTableViewTypePicture = 10,
+    JCTableViewTypeWord = 29,
+    JCTableViewTypeVoice = 31,
+    JCTableViewTypeVideo = 41
+    
+} JCTableViewType;
 
 #endif /* PrefixHeader_pch */

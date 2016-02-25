@@ -9,16 +9,34 @@
 #import "JCJokeModel.h"
 
 @implementation JCJokeModel
-
-+(instancetype)jokeModelWithDict:(NSDictionary *)dict{
-    return [[self alloc] initWithDict:dict];
+{
+    CGFloat _cellHeight;
 }
 
--(instancetype)initWithDict:(NSDictionary *)dict{
-    if (self = [super init]) {
-        [self setValuesForKeysWithDictionary:dict];
+
+-(CGFloat)cellHeight{
+    if (!_cellHeight) {
+        //正文高度
+        CGFloat textY = JCCellIconH + JCCellMarginY;
+        NSDictionary *attrs = @{NSFontAttributeName: [UIFont systemFontOfSize:14]};
+        CGSize textSize = CGSizeMake([UIScreen mainScreen].bounds.size.width - 2 * JCCellMarginX - 2 * JCCellTextMarginW, MAXFLOAT);
+        CGRect textF = [self.text boundingRectWithSize:textSize options:NSStringDrawingUsesLineFragmentOrigin attributes:attrs context:nil];
+        
+        CGFloat cellHeight = textF.size.height + textY + JCCellButtonViewH + 3 * JCCellMarginH;
+        //图片高度
+        if (self.type == JCTableViewTypePicture) {
+            CGFloat imageX = JCCellMarginX;
+            CGFloat imageY = textF.size.height + textY + JCCellMarginY;
+            CGFloat imageW = textSize.width;
+            CGFloat imageH = self.height * ( imageW / self.width);
+            self.imageF = CGRectMake(imageX, imageY, imageW, imageH);
+            //        NSLog(@"%@",NSStringFromCGRect(self.cellImageView.frame));
+            //cell高度
+            cellHeight = imageH + imageY + JCCellMarginY + JCCellButtonViewH + JCCellMarginH;
+        }
+        _cellHeight = cellHeight;
     }
-    return self;
+    return _cellHeight;
 }
 
 -(void)setDing:(NSString *)ding{
@@ -47,10 +65,6 @@
     if (!favourite) {
         _favourite = @"分享下";
     }
-}
-
--(void)setValue:(id)value forUndefinedKey:(NSString *)key{
-    
 }
 
 @end

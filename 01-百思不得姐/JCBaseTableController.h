@@ -8,18 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-typedef enum{
-    JCTableViewTypeAll = 1,
-    JCTableViewTypePicture = 10,
-    JCTableViewTypeWord = 29,
-    JCTableViewTypeVoice = 31,
-    JCTableViewTypeVideo = 41
-
-} JCTableViewType;
-
 
 @interface JCBaseTableController : UITableViewController
-
+/** 帖子类型 **/
 @property (assign, nonatomic) JCTableViewType type;
 
 @end

@@ -9,42 +9,72 @@
 #import "JCJokeCell.h"
 #import "JCJokeModel.h"
 #import <UIImageView+WebCache.h>
+#import "JCCellImageView.h"
 
 @interface JCJokeCell()
-
+/** 头像 **/
 @property (weak, nonatomic) IBOutlet UIImageView *icon;
+/** 昵称 **/
 @property (weak, nonatomic) IBOutlet UILabel *nameLable;
+/** 帖子时间 **/
 @property (weak, nonatomic) IBOutlet UILabel *createdDate;
-@property (weak, nonatomic) IBOutlet UILabel *textLable;
+/** 正文 **/
+@property (weak, nonatomic) IBOutlet UILabel *cellTextLable;
+/** 顶按钮 **/
 @property (weak, nonatomic) IBOutlet UIButton *dingBtn;
+/** 踩按钮 **/
 @property (weak, nonatomic) IBOutlet UIButton *caiBtn;
+/** 分享按钮 **/
 @property (weak, nonatomic) IBOutlet UIButton *shareBtn;
+/** 评论按钮 **/
 @property (weak, nonatomic) IBOutlet UIButton *messageBtn;
+/** 图片view **/
+@property (weak, nonatomic) JCCellImageView *cellImageView;
 
 @end
 
 @implementation JCJokeCell
+/**
+ *  懒加载图片view
+ */
+-(JCCellImageView *)cellImageView{
+    if (!_cellImageView) {
+        JCCellImageView *cellImageView = [JCCellImageView cellImageView];
+        [self.contentView addSubview:cellImageView];
+        _cellImageView = cellImageView;
+    }
+    return _cellImageView;
+}
 
 - (void)awakeFromNib {
     // Initialization code
-    self.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"mainCellBackground"]];
+    UIImageView *bgView = [[UIImageView alloc] init];
+    bgView.image = [UIImage imageNamed:@"mainCellBackground"];
+    self.backgroundView = bgView;
     self.selectionStyle = UITableViewCellSelectionStyleNone;
-    
+//    self.textLabel.textColor = [UIColor blackColor];
 }
-//加载模型
+//加载模型,给各控件赋值
 -(void)setModel:(JCJokeModel *)model{
     _model = model;
+    //设置头像
     [self.icon sd_setImageWithURL:[NSURL URLWithString:model.profile_image] placeholderImage:[UIImage imageNamed:@"defaultUserIcon"]];
+    //设置昵称
     self.nameLable.text = model.screen_name;
+    //设置时间
     [self setupTimeLable:model];
-//    NSLog(@"是否今年：%d,是否今天：%d,是否昨天：%d",createDate.isThisYear,createDate.isToday,createDate.isYesterday);
-    
-    
-    self.textLable.text = model.text;
+    //设置正文
+    self.cellTextLable.text = model.text;
+    //设置按钮
     [self.dingBtn setTitle:model.ding forState:UIControlStateNormal];
     [self.caiBtn setTitle:model.cai forState:UIControlStateNormal];
     [self.shareBtn setTitle:model.favourite forState:UIControlStateNormal];
     [self.messageBtn setTitle:model.repost forState:UIControlStateNormal];
+    //设置图片
+    if (model.type == JCTableViewTypePicture) {
+        self.cellImageView.model = model;
+        self.cellImageView.frame = model.imageF;
+    }
 }
 
 -(void)setupTimeLable:(JCJokeModel *)model{
@@ -87,17 +117,6 @@
     }else{//非今年
         self.createdDate.text = model.create_time;
     }
-}
-
-/**
- *  设置高度
- */
--(CGFloat)setCellHeight{
-    NSDictionary *attrs = @{NSFontAttributeName: [UIFont systemFontOfSize:14]};
-    CGSize textSize = CGSizeMake([UIScreen mainScreen].bounds.size.width - 4 * JCCellMarginX - 2 * JCCellTextMarginW, MAXFLOAT);
-    self.textLable.frame = [self.textLable.text boundingRectWithSize:textSize options:NSStringDrawingUsesLineFragmentOrigin attributes:attrs context:nil];
-    CGFloat cellHeight = self.textLable.frame.size.height + JCCellIconH + JCCellButtonViewH + JCCellMarginH + JCCellMarginY;
-    return cellHeight;
 }
 
 -(void)setFrame:(CGRect)frame{

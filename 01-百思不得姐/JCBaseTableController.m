@@ -12,6 +12,7 @@
 #import <AFNetworking.h>
 #import <UIImageView+WebCache.h>
 #import "JCJokeCell.h"
+#import <MJExtension.h>
 @interface JCBaseTableController ()
 
 @property (strong, nonatomic) NSMutableArray *data;
@@ -26,17 +27,14 @@
 @implementation JCBaseTableController
 
 static NSString *const ID = @"CellJoke";
-//直接转模型
--(void)setData:(NSMutableArray *)data{
-    if (_data == nil) {
+/**
+ *  懒加载
+ */
+-(NSMutableArray *)data{
+    if (!_data) {
         _data = [NSMutableArray array];
     }
-    NSMutableArray *dataArr = [NSMutableArray array];
-    for (NSDictionary *dict in data) {
-        JCJokeModel *model = [JCJokeModel jokeModelWithDict:dict];
-        [dataArr addObject:model];
-    }
-    [_data addObjectsFromArray:dataArr];
+    return _data;
 }
 
 -(AFHTTPSessionManager *)manager{
@@ -50,15 +48,16 @@ static NSString *const ID = @"CellJoke";
     [super viewDidLoad];
     //注册cell
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([JCJokeCell class]) bundle:nil] forCellReuseIdentifier:ID];
-    //发送请求，加载数据
+    //初始化各控件
     [self setupRefresh];
     [self setupTableView];
-    
+//    NSLog(@"tableView : %d",self.tableView.opaque);
 }
 /**
  *  初始化tableView
  */
 -(void)setupTableView{
+    self.tableView.contentInset = UIEdgeInsetsMake(104, 0, 49, 0);
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.backgroundColor = [UIColor clearColor];
     self.tableView.scrollIndicatorInsets = UIEdgeInsetsMake(104, 0, 44, 0);
@@ -70,12 +69,15 @@ static NSString *const ID = @"CellJoke";
 -(void)setupRefresh{
     self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(newData)];
     self.tableView.mj_header.automaticallyChangeAlpha = YES;
+    [self.tableView.mj_header beginRefreshing];
     self.tableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(moreData)];
 }
 /**
- *  发送请求，加载数据
+ *  发送请求，加载数据（上拉）
  */
 -(void)newData{
+    //上拉数据时，首先停止下拉
+    [self.tableView.mj_footer endRefreshing];
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"a"] = @"list";
     params[@"c"] = @"data";
@@ -86,10 +88,12 @@ static NSString *const ID = @"CellJoke";
             return ;
         }
         [self.data removeAllObjects];
-        self.data = responseObject[@"list"];
+//        self.data = responseObject[@"list"];
         self.maxtime = responseObject[@"info"][@"maxtime"];
+        self.data = [JCJokeModel mj_objectArrayWithKeyValuesArray:responseObject[@"list"]];
         [self.tableView reloadData];
         [self.tableView.mj_header endRefreshing];
+//        [responseObject writeToFile:@"/Users/jincheng/Desktop/data.plist" atomically:YES];
         self.page = 0;
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         [self.tableView.mj_header endRefreshing];
@@ -97,9 +101,11 @@ static NSString *const ID = @"CellJoke";
     }];
 }
 /**
- *  发送请求，加载数据
+ *  发送请求，加载数据（下拉）
  */
 -(void)moreData{
+    //下拉数据时，首先停止上拉
+    [self.tableView.mj_header endRefreshing];
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"a"] = @"list";
     params[@"c"] = @"data";
@@ -111,8 +117,10 @@ static NSString *const ID = @"CellJoke";
         if (self.params != params) {
             return ;
         }
-        self.data = responseObject[@"list"];
+//        self.data = responseObject[@"list"];
         self.maxtime = responseObject[@"info"][@"maxtime"];
+        NSArray *newData = [JCJokeModel mj_objectArrayWithKeyValuesArray:responseObject[@"list"]];
+        [self.data addObjectsFromArray:newData];
         [self.tableView reloadData];
         [self.tableView.mj_footer endRefreshing];
         
@@ -123,7 +131,9 @@ static NSString *const ID = @"CellJoke";
     }];
 }
 
+#pragma mark - 代理方法
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    self.tableView.mj_footer.hidden = (self.data.count == 0);
     return self.data.count;
 }
 
@@ -131,19 +141,22 @@ static NSString *const ID = @"CellJoke";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     JCJokeCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
-    if (cell == nil) {
-        cell = [[JCJokeCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
-    }
-    cell.model = self.data[indexPath.row];
     
-    self.cellHeight = [cell setCellHeight];
+    cell.model = self.data[indexPath.row];
+
+//    self.cellHeight = [cell setCellHeight];
+    NSLog(@"%@",self.title);
     return cell;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return self.cellHeight;
+//    return self.cellHeight;
+    JCJokeModel *model = self.data[indexPath.row];
+    return model.cellHeight;
 }
-
+/**
+ *  清空所有请求
+ */
 -(void)dealloc{
     [self.manager.operationQueue cancelAllOperations];
 }

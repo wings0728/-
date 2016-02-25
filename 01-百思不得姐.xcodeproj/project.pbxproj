@@ -17,6 +17,9 @@
 		364DC09B1C74AE720092E728 /* JCfriendTrendsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 364DC0991C74AE720092E728 /* JCfriendTrendsController.xib */; };
 		364DC09E1C74B28B0092E728 /* JCfriendsRecommentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 364DC09D1C74B28B0092E728 /* JCfriendsRecommentController.m */; };
 		364DC0A11C74B8210092E728 /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 364DC0A01C74B8210092E728 /* Foundation+Log.m */; };
+		365905831C7E961500542FEB /* JCCellImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 365905821C7E961500542FEB /* JCCellImageView.m */; };
+		365905851C7E963100542FEB /* JCCellImageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 365905841C7E963100542FEB /* JCCellImageView.xib */; };
+		366AB58E1C7ED27B00B04865 /* JCJokeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 366AB58D1C7ED27B00B04865 /* JCJokeCell.xib */; };
 		3674B2171C75FCF500075450 /* JCFriendRightCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3674B2151C75FCF500075450 /* JCFriendRightCell.m */; };
 		3674B2181C75FCF500075450 /* JCFriendRightCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3674B2161C75FCF500075450 /* JCFriendRightCell.xib */; };
 		3674B21B1C76042900075450 /* JCFriendRightModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3674B21A1C76042900075450 /* JCFriendRightModel.m */; };
@@ -32,7 +35,6 @@
 		36BDF0031C785EE40036F94E /* JCBaseTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36BDF0021C785EE40036F94E /* JCBaseTableController.m */; };
 		36BDF0061C7895790036F94E /* JCJokeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 36BDF0051C7895790036F94E /* JCJokeModel.m */; };
 		36BDF00A1C789E120036F94E /* JCJokeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 36BDF0081C789E120036F94E /* JCJokeCell.m */; };
-		36BDF00B1C789E120036F94E /* JCJokeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36BDF0091C789E120036F94E /* JCJokeCell.xib */; };
 		36EB8CFC1C749E9E008E3289 /* JCMainNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36EB8CFB1C749E9E008E3289 /* JCMainNavigationController.m */; };
 		36EB8D031C74A00B008E3289 /* JCEssenceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36EB8D021C74A00B008E3289 /* JCEssenceController.m */; };
 		36EB8D061C74A372008E3289 /* UIBarButtonItem+JC.m in Sources */ = {isa = PBXBuildFile; fileRef = 36EB8D051C74A372008E3289 /* UIBarButtonItem+JC.m */; };
@@ -76,6 +78,10 @@
 		364DC09C1C74B28B0092E728 /* JCfriendsRecommentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JCfriendsRecommentController.h; sourceTree = "<group>"; };
 		364DC09D1C74B28B0092E728 /* JCfriendsRecommentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JCfriendsRecommentController.m; sourceTree = "<group>"; };
 		364DC0A01C74B8210092E728 /* Foundation+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Foundation+Log.m"; sourceTree = "<group>"; };
+		365905811C7E961500542FEB /* JCCellImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JCCellImageView.h; sourceTree = "<group>"; };
+		365905821C7E961500542FEB /* JCCellImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JCCellImageView.m; sourceTree = "<group>"; };
+		365905841C7E963100542FEB /* JCCellImageView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JCCellImageView.xib; sourceTree = "<group>"; };
+		366AB58D1C7ED27B00B04865 /* JCJokeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JCJokeCell.xib; sourceTree = "<group>"; };
 		3674B2141C75FCF500075450 /* JCFriendRightCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JCFriendRightCell.h; sourceTree = "<group>"; };
 		3674B2151C75FCF500075450 /* JCFriendRightCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JCFriendRightCell.m; sourceTree = "<group>"; };
 		3674B2161C75FCF500075450 /* JCFriendRightCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JCFriendRightCell.xib; sourceTree = "<group>"; };
@@ -107,7 +113,6 @@
 		36BDF0051C7895790036F94E /* JCJokeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JCJokeModel.m; sourceTree = "<group>"; };
 		36BDF0071C789E120036F94E /* JCJokeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JCJokeCell.h; sourceTree = "<group>"; };
 		36BDF0081C789E120036F94E /* JCJokeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JCJokeCell.m; sourceTree = "<group>"; };
-		36BDF0091C789E120036F94E /* JCJokeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JCJokeCell.xib; sourceTree = "<group>"; };
 		36EB8CFA1C749E9E008E3289 /* JCMainNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JCMainNavigationController.h; sourceTree = "<group>"; };
 		36EB8CFB1C749E9E008E3289 /* JCMainNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JCMainNavigationController.m; sourceTree = "<group>"; };
 		36EB8D011C74A00B008E3289 /* JCEssenceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JCEssenceController.h; sourceTree = "<group>"; };
@@ -424,7 +429,10 @@
 			children = (
 				36BDF0071C789E120036F94E /* JCJokeCell.h */,
 				36BDF0081C789E120036F94E /* JCJokeCell.m */,
-				36BDF0091C789E120036F94E /* JCJokeCell.xib */,
+				366AB58D1C7ED27B00B04865 /* JCJokeCell.xib */,
+				365905811C7E961500542FEB /* JCCellImageView.h */,
+				365905821C7E961500542FEB /* JCCellImageView.m */,
+				365905841C7E963100542FEB /* JCCellImageView.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -557,7 +565,8 @@
 				3674B2181C75FCF500075450 /* JCFriendRightCell.xib in Resources */,
 				364238831C75D10500262509 /* JCfriendsRecommentController.xib in Resources */,
 				364238881C75D2BC00262509 /* JCFriendLeftCell.xib in Resources */,
-				36BDF00B1C789E120036F94E /* JCJokeCell.xib in Resources */,
+				366AB58E1C7ED27B00B04865 /* JCJokeCell.xib in Resources */,
+				365905851C7E963100542FEB /* JCCellImageView.xib in Resources */,
 				364DC09B1C74AE720092E728 /* JCfriendTrendsController.xib in Resources */,
 				36BCB3581C744D9700E6CD1C /* Assets.xcassets in Resources */,
 			);
@@ -637,6 +646,7 @@
 				36BCB3501C744D9700E6CD1C /* AppDelegate.m in Sources */,
 				3674B21B1C76042900075450 /* JCFriendRightModel.m in Sources */,
 				36EB8CFC1C749E9E008E3289 /* JCMainNavigationController.m in Sources */,
+				365905831C7E961500542FEB /* JCCellImageView.m in Sources */,
 				3696C01D1C7C231500A7FDEB /* NSDate+JC.m in Sources */,
 				364DC09E1C74B28B0092E728 /* JCfriendsRecommentController.m in Sources */,
 				36BCB38D1C746D2000E6CD1C /* UIView+JC.m in Sources */,
