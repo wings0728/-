@@ -17,6 +17,7 @@
 		364DC09B1C74AE720092E728 /* JCfriendTrendsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 364DC0991C74AE720092E728 /* JCfriendTrendsController.xib */; };
 		364DC09E1C74B28B0092E728 /* JCfriendsRecommentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 364DC09D1C74B28B0092E728 /* JCfriendsRecommentController.m */; };
 		364DC0A11C74B8210092E728 /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 364DC0A01C74B8210092E728 /* Foundation+Log.m */; };
+		3652FABE1C81ECE700B7245E /* JCBigImageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3652FABD1C81ECE700B7245E /* JCBigImageController.m */; };
 		365905831C7E961500542FEB /* JCCellImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 365905821C7E961500542FEB /* JCCellImageView.m */; };
 		365905851C7E963100542FEB /* JCCellImageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 365905841C7E963100542FEB /* JCCellImageView.xib */; };
 		366AB58E1C7ED27B00B04865 /* JCJokeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 366AB58D1C7ED27B00B04865 /* JCJokeCell.xib */; };
@@ -78,6 +79,8 @@
 		364DC09C1C74B28B0092E728 /* JCfriendsRecommentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JCfriendsRecommentController.h; sourceTree = "<group>"; };
 		364DC09D1C74B28B0092E728 /* JCfriendsRecommentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JCfriendsRecommentController.m; sourceTree = "<group>"; };
 		364DC0A01C74B8210092E728 /* Foundation+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Foundation+Log.m"; sourceTree = "<group>"; };
+		3652FABC1C81ECE700B7245E /* JCBigImageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JCBigImageController.h; sourceTree = "<group>"; };
+		3652FABD1C81ECE700B7245E /* JCBigImageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JCBigImageController.m; sourceTree = "<group>"; };
 		365905811C7E961500542FEB /* JCCellImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JCCellImageView.h; sourceTree = "<group>"; };
 		365905821C7E961500542FEB /* JCCellImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JCCellImageView.m; sourceTree = "<group>"; };
 		365905841C7E963100542FEB /* JCCellImageView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JCCellImageView.xib; sourceTree = "<group>"; };
@@ -420,6 +423,8 @@
 				36EB8D021C74A00B008E3289 /* JCEssenceController.m */,
 				36BDF0011C785EE40036F94E /* JCBaseTableController.h */,
 				36BDF0021C785EE40036F94E /* JCBaseTableController.m */,
+				3652FABC1C81ECE700B7245E /* JCBigImageController.h */,
+				3652FABD1C81ECE700B7245E /* JCBigImageController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -641,6 +646,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3652FABE1C81ECE700B7245E /* JCBigImageController.m in Sources */,
 				3674B2171C75FCF500075450 /* JCFriendRightCell.m in Sources */,
 				364DC09A1C74AE720092E728 /* JCfriendTrendsController.m in Sources */,
 				36BCB3501C744D9700E6CD1C /* AppDelegate.m in Sources */,

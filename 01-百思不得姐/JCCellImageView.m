@@ -9,6 +9,7 @@
 #import "JCCellImageView.h"
 #import "JCJokeModel.h"
 #import <UIImageView+WebCache.h>
+#import "JCBigImageController.h"
 
 @interface JCCellImageView()
 
@@ -42,6 +43,12 @@
 
 -(void)awakeFromNib{
     self.autoresizingMask = UIViewAutoresizingNone;
+}
+//当此view被点击
+-(void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    JCBigImageController *bic = [[JCBigImageController alloc] init];
+    bic.model = self.model;
+    [self.window.rootViewController presentViewController:bic animated:YES completion:nil];
 }
 
 @end

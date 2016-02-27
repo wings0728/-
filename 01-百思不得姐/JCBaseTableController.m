@@ -144,7 +144,7 @@ static NSString *const ID = @"CellJoke";
     
     cell.model = self.data[indexPath.row];
 
-    NSLog(@"%@",self.title);
+//    NSLog(@"%@",self.title);
     return cell;
 }
 
