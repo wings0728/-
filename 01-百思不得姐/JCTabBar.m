@@ -7,6 +7,7 @@
 //
 
 #import "JCTabBar.h"
+#import "JCPublishController.h"
 
 @interface JCTabBar()
 
@@ -23,10 +24,18 @@
         UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
         [btn setBackgroundImage:[UIImage imageNamed:@"tabBar_publish_icon"] forState:UIControlStateNormal];
         [btn setBackgroundImage:[UIImage imageNamed:@"tabBar_publish_click_icon"] forState:UIControlStateSelected];
+        [btn addTarget:self action:@selector(publishClick) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:btn];
         self.btn = btn;
     }
     return self;
+}
+/**
+ *  弹出发布洁面
+ */
+-(void)publishClick{
+    JCPublishController *publish = [[JCPublishController alloc] init];
+    [self.window.rootViewController presentViewController:publish animated:YES completion:nil];
 }
 
 -(void)layoutSubviews{

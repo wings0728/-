@@ -28,6 +28,9 @@
                     </constraints>
                     <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
                     <state key="normal" title="点击显示大图" image="see-big-picture" backgroundImage="see-big-picture-background"/>
+                    <connections>
+                        <action selector="bigImageClick" destination="1qO-pt-k1M" eventType="touchUpInside" id="tQ9-0e-vQt"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

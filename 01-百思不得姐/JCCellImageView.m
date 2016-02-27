@@ -46,6 +46,9 @@
 }
 //当此view被点击
 -(void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    [self bigImageClick];
+}
+- (IBAction)bigImageClick {
     JCBigImageController *bic = [[JCBigImageController alloc] init];
     bic.model = self.model;
     [self.window.rootViewController presentViewController:bic animated:YES completion:nil];
