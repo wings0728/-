@@ -15,3 +15,5 @@ CGFloat const JCCellTextMarginW = 10;
 CGFloat const JCCellImageTooBigH = 600;
 /** 精华－Cell－超大图片默认显示高度 */
 CGFloat const JCCellMaxImageH = 250;
+/** 发布－按钮个数 */
+NSInteger const JCPublishButtonCount = 6;

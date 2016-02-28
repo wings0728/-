@@ -16,3 +16,5 @@ UIKIT_EXTERN CGFloat const JCCellTextMarginW;
 UIKIT_EXTERN CGFloat const JCCellImageTooBigH;
 /** 精华－Cell－超大图片默认显示高度 */
 UIKIT_EXTERN CGFloat const JCCellMaxImageH;
+/** 发布－按钮个数 */
+UIKIT_EXTERN NSInteger const JCPublishButtonCount;

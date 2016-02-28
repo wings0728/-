@@ -11,8 +11,9 @@
             <rect key="frame" x="0.0" y="0.0" width="319" height="271"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="n1v-s6-w1J">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="post_placeholderImage" translatesAutoresizingMaskIntoConstraints="NO" id="n1v-s6-w1J">
                     <rect key="frame" x="0.0" y="0.0" width="319" height="271"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="common-gif" translatesAutoresizingMaskIntoConstraints="NO" id="p9e-tr-UXX">
                     <rect key="frame" x="0.0" y="0.0" width="31" height="31"/>
@@ -45,6 +46,7 @@
                 <constraint firstAttribute="trailing" secondItem="Zwh-Qp-WoH" secondAttribute="trailing" id="snN-A5-xkG"/>
                 <constraint firstItem="Zwh-Qp-WoH" firstAttribute="leading" secondItem="1qO-pt-k1M" secondAttribute="leading" id="uQT-hA-aXS"/>
             </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="bigImageBtn" destination="Zwh-Qp-WoH" id="vHf-YF-uSz"/>
@@ -56,6 +58,7 @@
     </objects>
     <resources>
         <image name="common-gif" width="31" height="31"/>
+        <image name="post_placeholderImage" width="145" height="30"/>
         <image name="see-big-picture" width="19" height="19"/>
         <image name="see-big-picture-background" width="285" height="43"/>
     </resources>
