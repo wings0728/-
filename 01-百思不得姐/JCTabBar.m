@@ -35,7 +35,7 @@
  */
 -(void)publishClick{
     JCPublishController *publish = [[JCPublishController alloc] init];
-    [self.window.rootViewController presentViewController:publish animated:YES completion:nil];
+    [self.window.rootViewController presentViewController:publish animated:NO completion:nil];
 }
 
 -(void)layoutSubviews{

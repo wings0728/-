@@ -36,6 +36,8 @@ static CGFloat const JCPOPBegin = 0.1;
     NSArray *imageNameArr = @[@"video",@"picture",@"text",@"audio",@"review",@"offline"];
     //创建数组，放入按钮名称
     NSArray *btnNameArr = @[@"发视频",@"发图片",@"发段子",@"发视频",@"审帖",@"离线下载"];
+    
+    //开始创建按钮
     for (int index = 0; index < JCPublishButtonCount; index++) {
         //列号
         NSInteger column = index % columnCount;
@@ -43,6 +45,10 @@ static CGFloat const JCPOPBegin = 0.1;
         NSInteger line = index / columnCount;
         //创建按钮
         JCPublishButton *publishBtn = [JCPublishButton buttonWithType:UIButtonTypeCustom];
+        //绑定tag
+        publishBtn.tag = index;
+        //设置监听
+        [publishBtn addTarget:self action:@selector(publishClick:) forControlEvents:UIControlEventTouchUpInside];
         //设置图片
         NSString *imageName = [NSString stringWithFormat:@"publish-%@",imageNameArr[index]];
         [publishBtn setImage:[UIImage imageNamed:imageName] forState:UIControlStateNormal];
@@ -100,10 +106,31 @@ static CGFloat const JCPOPBegin = 0.1;
     //加入动画
     [titleImage pop_addAnimation:anim forKey:nil];
 }
+/**
+ *  点击了任意发布按钮
+ */
+-(void)publishClick:(JCPublishButton *)button{
+    [self cancelWithCompletionBlock:^{
+        if (button.tag == 0) {
+            NSLog(@"发视频");
+        }else if (button.tag == 1){
+            NSLog(@"发图片");
+        }
+    }];
+}
 
-
+/**
+ *  退出按钮
+ */
 - (IBAction)dismissButton {
-//    NSLog(@"%@",self.view.subviews);
+    [self cancelWithCompletionBlock:nil];
+}
+/**
+ *  退出控制器
+ *
+ *  @param completionBlock 退出后要执行的代码
+ */
+-(void)cancelWithCompletionBlock:(void(^)())completionBlock{
     for (int index = 2; index < self.view.subviews.count; index++) {
         //取出目前便利到的控件
         UIView *currentView = self.view.subviews[index];
@@ -119,11 +146,14 @@ static CGFloat const JCPOPBegin = 0.1;
         //如果时最后一个控件，则完成动画后退出当前控制器
         if (index == self.view.subviews.count - 1) {
             [anim setCompletionBlock:^(POPAnimation *anim, BOOL finish) {
-                [self dismissViewControllerAnimated:YES completion:nil];
+                [self dismissViewControllerAnimated:NO completion:nil];
+                //如果有bolck则在此处调用
+                !completionBlock ? : completionBlock();
             }];
         }
         //加入动画
         [currentView pop_addAnimation:anim forKey:nil];
     }
 }
+
 @end
