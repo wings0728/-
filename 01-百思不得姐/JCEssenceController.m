@@ -57,31 +57,31 @@
  *  初始化子tableView
  */
 -(void)setupChlidTableView{
-    JCBaseTableController *word = [[JCBaseTableController alloc] init];
-    word.title = @"段子";
-    word.type = JCTableViewTypeWord;
-    [self addChildViewController:word];
-    
-    JCBaseTableController *picture = [[JCBaseTableController alloc] init];
-    picture.title = @"图片";
-    picture.type = JCTableViewTypePicture;
-    [self addChildViewController:picture];
-    
     JCBaseTableController *all = [[JCBaseTableController alloc] init];
     all.title = @"全部";
     all.type = JCTableViewTypeAll;
     [self addChildViewController:all];
-    
-    JCBaseTableController *video = [[JCBaseTableController alloc] init];
-    video.title = @"视频";
-    video.type = JCTableViewTypeVideo;
-    [self addChildViewController:video];
     
     JCBaseTableController *voice = [[JCBaseTableController alloc] init];
     voice.title = @"声音";
     voice.type = JCTableViewTypeVoice;
     [self addChildViewController:voice];
     
+    JCBaseTableController *video = [[JCBaseTableController alloc] init];
+    video.title = @"视频";
+    video.type = JCTableViewTypeVideo;
+    [self addChildViewController:video];
+    
+    JCBaseTableController *picture = [[JCBaseTableController alloc] init];
+    picture.title = @"图片";
+    picture.type = JCTableViewTypePicture;
+    [self addChildViewController:picture];
+    
+    
+    JCBaseTableController *word = [[JCBaseTableController alloc] init];
+    word.title = @"段子";
+    word.type = JCTableViewTypeWord;
+    [self addChildViewController:word];
 }
 /**
  *  初始子控制器View的位置

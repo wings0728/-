@@ -45,8 +45,14 @@
 @property (assign, nonatomic) CGRect voiceF;
 /** 音频时长 **/
 @property (assign, nonatomic) NSInteger voicetime;
-/** 音频播放次数 **/
+/** 音频或视频播放次数 **/
 @property (assign, nonatomic) NSInteger playcount;
+
+/** 视频图片尺寸 **/
+@property (assign, nonatomic) CGRect videoF;
+/** 音频时长 **/
+@property (assign, nonatomic) NSInteger videotime;
+
 
 /** 帖子类型 **/
 @property (assign, nonatomic) JCTableViewType type;

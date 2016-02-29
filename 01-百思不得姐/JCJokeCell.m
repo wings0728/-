@@ -11,6 +11,7 @@
 #import <UIImageView+WebCache.h>
 #import "JCCellImageView.h"
 #import "JCCellVoiceView.h"
+#import "JCCellVideoView.h"
 
 @interface JCJokeCell()
 /** 头像 **/
@@ -31,8 +32,10 @@
 @property (weak, nonatomic) IBOutlet UIButton *messageBtn;
 /** 图片view **/
 @property (weak, nonatomic) JCCellImageView *cellImageView;
-/** 声音view **/
+/** 声音图片view **/
 @property (weak, nonatomic) JCCellVoiceView *cellVoiceView;
+/** 视频图片view **/
+@property (weak, nonatomic) JCCellVideoView *cellVideoView;
 
 @end
 
@@ -58,6 +61,17 @@
         _cellVoiceView = cellVoiceView;
     }
     return _cellVoiceView;
+}
+/**
+ *  懒加载视频图片View
+ */
+-(JCCellVideoView *)cellVideoView{
+    if (!_cellVideoView) {
+        JCCellVideoView *cellVideoView = [JCCellVideoView cellVideoView];
+        [self.contentView addSubview:cellVideoView];
+        _cellVideoView = cellVideoView;
+    }
+    return _cellVideoView;
 }
 
 - (void)awakeFromNib {
@@ -86,12 +100,30 @@
     //设置图片
     if (model.type == JCTableViewTypePicture) {
         //如果是图片
+        self.cellImageView.hidden = NO;
+        self.cellVoiceView.hidden = YES;
+        self.cellVideoView.hidden = YES;
         self.cellImageView.model = model;
         self.cellImageView.frame = model.imageF;
     }else if (model.type == JCTableViewTypeVoice){
         //如果是声音
+        self.cellImageView.hidden = YES;
+        self.cellVoiceView.hidden = NO;
+        self.cellVideoView.hidden = YES;
         self.cellVoiceView.model = model;
         self.cellVoiceView.frame = model.voiceF;
+    }else if (model.type == JCTableViewTypeVideo){
+        //如果是视频
+        self.cellImageView.hidden = YES;
+        self.cellVoiceView.hidden = YES;
+        self.cellVideoView.hidden = NO;
+        self.cellVideoView.model = model;
+        self.cellVideoView.frame = model.videoF;
+    }else{
+        //如果是段子
+        self.cellImageView.hidden = YES;
+        self.cellVoiceView.hidden = YES;
+        self.cellVideoView.hidden = YES;
     }
 }
 

@@ -49,6 +49,15 @@
             self.voiceF = CGRectMake(voiceX, voiceY, voiceW, voiceH);
             //cell高度
             cellHeight = voiceH + voiceY + JCCellMarginY + JCCellButtonViewH + JCCellMarginH;
+        }else if (self.type == JCTableViewTypeVideo){
+            //视频图片frame计算
+            CGFloat videoX = JCCellMarginX;
+            CGFloat videoY = textF.size.height + textY + JCCellMarginY;
+            CGFloat videoW = textSize.width;
+            CGFloat videoH = self.height * ( videoW / self.width);
+            self.videoF = CGRectMake(videoX, videoY, videoW, videoH);
+            //cell高度
+            cellHeight = videoH + videoY + JCCellMarginY + JCCellButtonViewH + JCCellMarginH;
         }
         _cellHeight = cellHeight;
     }
