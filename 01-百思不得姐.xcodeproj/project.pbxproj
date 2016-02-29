@@ -25,6 +25,8 @@
 		3652FACE1C840B7900B7245E /* JCCellVoiceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3652FACD1C840B7900B7245E /* JCCellVoiceView.xib */; };
 		3652FAD11C84198F00B7245E /* JCCellVideoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3652FAD01C84198F00B7245E /* JCCellVideoView.m */; };
 		3652FAD31C84199E00B7245E /* JCCellVideoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3652FAD21C84199E00B7245E /* JCCellVideoView.xib */; };
+		3652FB1B1C84821A00B7245E /* JCCommentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3652FB191C84821A00B7245E /* JCCommentController.m */; };
+		3652FB1C1C84821A00B7245E /* JCCommentController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3652FB1A1C84821A00B7245E /* JCCommentController.xib */; };
 		365905831C7E961500542FEB /* JCCellImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 365905821C7E961500542FEB /* JCCellImageView.m */; };
 		365905851C7E963100542FEB /* JCCellImageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 365905841C7E963100542FEB /* JCCellImageView.xib */; };
 		366AB58E1C7ED27B00B04865 /* JCJokeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 366AB58D1C7ED27B00B04865 /* JCJokeCell.xib */; };
@@ -99,6 +101,9 @@
 		3652FACF1C84198F00B7245E /* JCCellVideoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JCCellVideoView.h; sourceTree = "<group>"; };
 		3652FAD01C84198F00B7245E /* JCCellVideoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JCCellVideoView.m; sourceTree = "<group>"; };
 		3652FAD21C84199E00B7245E /* JCCellVideoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JCCellVideoView.xib; sourceTree = "<group>"; };
+		3652FB181C84821A00B7245E /* JCCommentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JCCommentController.h; sourceTree = "<group>"; };
+		3652FB191C84821A00B7245E /* JCCommentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JCCommentController.m; sourceTree = "<group>"; };
+		3652FB1A1C84821A00B7245E /* JCCommentController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JCCommentController.xib; sourceTree = "<group>"; };
 		365905811C7E961500542FEB /* JCCellImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JCCellImageView.h; sourceTree = "<group>"; };
 		365905821C7E961500542FEB /* JCCellImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JCCellImageView.m; sourceTree = "<group>"; };
 		365905841C7E963100542FEB /* JCCellImageView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JCCellImageView.xib; sourceTree = "<group>"; };
@@ -472,6 +477,9 @@
 				36BDF0021C785EE40036F94E /* JCBaseTableController.m */,
 				3652FABC1C81ECE700B7245E /* JCBigImageController.h */,
 				3652FABD1C81ECE700B7245E /* JCBigImageController.m */,
+				3652FB181C84821A00B7245E /* JCCommentController.h */,
+				3652FB191C84821A00B7245E /* JCCommentController.m */,
+				3652FB1A1C84821A00B7245E /* JCCommentController.xib */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -625,6 +633,7 @@
 				364238831C75D10500262509 /* JCfriendsRecommentController.xib in Resources */,
 				3652FAD31C84199E00B7245E /* JCCellVideoView.xib in Resources */,
 				364238881C75D2BC00262509 /* JCFriendLeftCell.xib in Resources */,
+				3652FB1C1C84821A00B7245E /* JCCommentController.xib in Resources */,
 				366AB58E1C7ED27B00B04865 /* JCJokeCell.xib in Resources */,
 				365905851C7E963100542FEB /* JCCellImageView.xib in Resources */,
 				3652FACE1C840B7900B7245E /* JCCellVoiceView.xib in Resources */,
@@ -718,6 +727,7 @@
 				36BDF0061C7895790036F94E /* JCJokeModel.m in Sources */,
 				36BDF0031C785EE40036F94E /* JCBaseTableController.m in Sources */,
 				36BCB38A1C74625900E6CD1C /* JCTabBar.m in Sources */,
+				3652FB1B1C84821A00B7245E /* JCCommentController.m in Sources */,
 				36BDF00A1C789E120036F94E /* JCJokeCell.m in Sources */,
 				364238871C75D2BC00262509 /* JCFriendLeftCell.m in Sources */,
 				3652FAC51C82034000B7245E /* JCPublishController.m in Sources */,

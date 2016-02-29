@@ -13,14 +13,18 @@
 #import <UIImageView+WebCache.h>
 #import "JCJokeCell.h"
 #import <MJExtension.h>
-@interface JCBaseTableController ()
+#import "JCCommentController.h"
 
+@interface JCBaseTableController ()
+/** 存放所有对象的数组 **/
 @property (strong, nonatomic) NSMutableArray *data;
+/** cell行高 **/
 @property (assign, nonatomic) NSInteger cellHeight;
 @property (assign, nonatomic) NSInteger page;
 @property (copy, nonatomic) NSString *maxtime;
 @property (strong, nonatomic) NSMutableDictionary *params;
 @property (strong, nonatomic) AFHTTPSessionManager *manager;
+
 
 @end
 
@@ -132,26 +136,38 @@ static NSString *const ID = @"CellJoke";
 }
 
 #pragma mark - 代理方法
+/**
+ *  返回cell的行数
+ */
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     self.tableView.mj_footer.hidden = (self.data.count == 0);
     return self.data.count;
 }
-
-
+/**
+ *  创建cell
+ */
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
     JCJokeCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
-    
     cell.model = self.data[indexPath.row];
-
-//    NSLog(@"%@",self.title);
     return cell;
 }
-
+/**
+ *  返回每行cell的高度
+ */
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     JCJokeModel *model = self.data[indexPath.row];
     return model.cellHeight;
 }
+/**
+ *  选中对应的cell
+ */
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    JCCommentController *cmt = [[JCCommentController alloc] init];
+    //取出数组对应行号模型，赋值给评论控制器
+    cmt.model = self.data[indexPath.row];
+    [self.navigationController pushViewController:cmt animated:YES];
+}
+
 /**
  *  清空所有请求
  */

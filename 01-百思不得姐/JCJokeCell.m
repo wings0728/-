@@ -40,6 +40,10 @@
 @end
 
 @implementation JCJokeCell
+
++(instancetype)cell{
+    return [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass(self) owner:nil options:nil]lastObject];
+}
 /**
  *  懒加载图片view
  */
