@@ -10,6 +10,7 @@
 #import "JCJokeModel.h"
 #import <UIImageView+WebCache.h>
 #import "JCCellImageView.h"
+#import "JCCellVoiceView.h"
 
 @interface JCJokeCell()
 /** 头像 **/
@@ -30,6 +31,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *messageBtn;
 /** 图片view **/
 @property (weak, nonatomic) JCCellImageView *cellImageView;
+/** 声音view **/
+@property (weak, nonatomic) JCCellVoiceView *cellVoiceView;
 
 @end
 
@@ -44,6 +47,17 @@
         _cellImageView = cellImageView;
     }
     return _cellImageView;
+}
+/**
+ *  懒加载声音图片View
+ */
+-(JCCellVoiceView *)cellVoiceView{
+    if (!_cellVoiceView) {
+        JCCellVoiceView *cellVoiceView = [JCCellVoiceView cellVoiceView];
+        [self.contentView addSubview:cellVoiceView];
+        _cellVoiceView = cellVoiceView;
+    }
+    return _cellVoiceView;
 }
 
 - (void)awakeFromNib {
@@ -71,8 +85,13 @@
     [self.messageBtn setTitle:model.repost forState:UIControlStateNormal];
     //设置图片
     if (model.type == JCTableViewTypePicture) {
+        //如果是图片
         self.cellImageView.model = model;
         self.cellImageView.frame = model.imageF;
+    }else if (model.type == JCTableViewTypeVoice){
+        //如果是声音
+        self.cellVoiceView.model = model;
+        self.cellVoiceView.frame = model.voiceF;
     }
 }
 

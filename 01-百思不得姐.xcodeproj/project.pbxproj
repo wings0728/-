@@ -21,6 +21,8 @@
 		3652FAC51C82034000B7245E /* JCPublishController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3652FAC31C82034000B7245E /* JCPublishController.m */; };
 		3652FAC61C82034000B7245E /* JCPublishController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3652FAC41C82034000B7245E /* JCPublishController.xib */; };
 		3652FAC91C82C06F00B7245E /* JCPublishButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3652FAC81C82C06F00B7245E /* JCPublishButton.m */; };
+		3652FACC1C840B6900B7245E /* JCCellVoiceView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3652FACB1C840B6900B7245E /* JCCellVoiceView.m */; };
+		3652FACE1C840B7900B7245E /* JCCellVoiceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3652FACD1C840B7900B7245E /* JCCellVoiceView.xib */; };
 		365905831C7E961500542FEB /* JCCellImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 365905821C7E961500542FEB /* JCCellImageView.m */; };
 		365905851C7E963100542FEB /* JCCellImageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 365905841C7E963100542FEB /* JCCellImageView.xib */; };
 		366AB58E1C7ED27B00B04865 /* JCJokeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 366AB58D1C7ED27B00B04865 /* JCJokeCell.xib */; };
@@ -89,6 +91,9 @@
 		3652FAC41C82034000B7245E /* JCPublishController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JCPublishController.xib; sourceTree = "<group>"; };
 		3652FAC71C82C06F00B7245E /* JCPublishButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JCPublishButton.h; sourceTree = "<group>"; };
 		3652FAC81C82C06F00B7245E /* JCPublishButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JCPublishButton.m; sourceTree = "<group>"; };
+		3652FACA1C840B6900B7245E /* JCCellVoiceView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JCCellVoiceView.h; sourceTree = "<group>"; };
+		3652FACB1C840B6900B7245E /* JCCellVoiceView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JCCellVoiceView.m; sourceTree = "<group>"; };
+		3652FACD1C840B7900B7245E /* JCCellVoiceView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JCCellVoiceView.xib; sourceTree = "<group>"; };
 		365905811C7E961500542FEB /* JCCellImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JCCellImageView.h; sourceTree = "<group>"; };
 		365905821C7E961500542FEB /* JCCellImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JCCellImageView.m; sourceTree = "<group>"; };
 		365905841C7E963100542FEB /* JCCellImageView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JCCellImageView.xib; sourceTree = "<group>"; };
@@ -475,6 +480,9 @@
 				365905811C7E961500542FEB /* JCCellImageView.h */,
 				365905821C7E961500542FEB /* JCCellImageView.m */,
 				365905841C7E963100542FEB /* JCCellImageView.xib */,
+				3652FACA1C840B6900B7245E /* JCCellVoiceView.h */,
+				3652FACB1C840B6900B7245E /* JCCellVoiceView.m */,
+				3652FACD1C840B7900B7245E /* JCCellVoiceView.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -610,6 +618,7 @@
 				364238881C75D2BC00262509 /* JCFriendLeftCell.xib in Resources */,
 				366AB58E1C7ED27B00B04865 /* JCJokeCell.xib in Resources */,
 				365905851C7E963100542FEB /* JCCellImageView.xib in Resources */,
+				3652FACE1C840B7900B7245E /* JCCellVoiceView.xib in Resources */,
 				364DC09B1C74AE720092E728 /* JCfriendTrendsController.xib in Resources */,
 				36BCB3581C744D9700E6CD1C /* Assets.xcassets in Resources */,
 			);
@@ -684,6 +693,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3652FACC1C840B6900B7245E /* JCCellVoiceView.m in Sources */,
 				3652FABE1C81ECE700B7245E /* JCBigImageController.m in Sources */,
 				3674B2171C75FCF500075450 /* JCFriendRightCell.m in Sources */,
 				364DC09A1C74AE720092E728 /* JCfriendTrendsController.m in Sources */,

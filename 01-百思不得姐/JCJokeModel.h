@@ -25,6 +25,7 @@
 @property (copy, nonatomic) NSString *favourite;
 /** 评论数量 **/
 @property (copy, nonatomic) NSString *repost;
+
 /** 图片 **/
 @property (copy, nonatomic) NSString *image0;
 @property (copy, nonatomic) NSString *image1;
@@ -33,13 +34,19 @@
 @property (assign, nonatomic) CGFloat height;
 /** 图片宽度 **/
 @property (assign, nonatomic) CGFloat width;
-/** 图片宽度 **/
+/** 图片尺寸 **/
 @property (assign, nonatomic) CGRect imageF;
 /** 图片gif判断 **/
 @property (assign, nonatomic) BOOL is_gif;
 /** 图片超大判断判断 **/
 @property (assign, nonatomic,getter=isTooBigImage) BOOL tooBigImage;
 
+/** 音频图片尺寸 **/
+@property (assign, nonatomic) CGRect voiceF;
+/** 音频时长 **/
+@property (assign, nonatomic) NSInteger voicetime;
+/** 音频播放次数 **/
+@property (assign, nonatomic) NSInteger playcount;
 
 /** 帖子类型 **/
 @property (assign, nonatomic) JCTableViewType type;
